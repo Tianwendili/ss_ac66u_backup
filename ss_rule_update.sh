@@ -124,6 +124,7 @@ rm -rf /tmp/gfwlist.conf1
 rm -rf /tmp/chnroute.txt1
 rm -rf /tmp/cdn.txt1
 rm -rf /tmp/version1
+for i in `grep -v / /koolshare/ss/rules/chnroute.txt `;do sed -i "/$i/d" /koolshare/ss/rules/chnroute.txt ;done
 echo_date Shadowsocks更新进程运行完毕！
 # write number
 nvram set update_ipset="$(cat /koolshare/ss/rules/version | sed -n 1p | sed 's/#/\n/g'| sed -n 1p)"
